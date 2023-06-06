@@ -1,6 +1,6 @@
 const Joi = require("joi");
 
-const schema = Joi.object({
+const contactSchema = Joi.object({
   name: Joi.string().required(),
   email: Joi.string().email().required(),
   phone: Joi.string().required(),
@@ -12,6 +12,6 @@ const updateFavoritesSchema = Joi.object({
 });
 
 module.exports = {
-  schema,
+  contactSchema,
   updateFavoritesSchema,
 };
