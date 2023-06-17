@@ -13,6 +13,14 @@ router.post(
   controllers.register
 );
 
+router.get("/verify/:verificationCode", controllers.verify);
+
+router.post(
+  "/verify",
+  validateBody(schema.emailSchema),
+  controllers.resendVerifyEmail
+);
+
 router.post("/login", validateBody(schema.loginSchema), controllers.login);
 
 router.get("/current", authenticate, controllers.getCurrent);
